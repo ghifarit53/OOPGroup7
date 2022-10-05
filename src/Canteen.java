@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Canteen {
-
     public static void main(String[] args) {
         printKantinBanner();
         Scanner sc = new Scanner(System.in);
@@ -47,8 +46,10 @@ public class Canteen {
         System.out.println(chosenFood.name + " (x" + itemAmount + ")");
         System.out.println("Total harga: Rp" + totalHarga);
         System.out.println("Total diskon: Rp" + totalDisc);
-        System.out.println("Total Harga (setelah diskon): " + (totalHarga - (int)totalDisc));
-        System.out.println("\nSelamat Menikmati :)");
+        System.out.println("Total Harga (setelah diskon): Rp" + (totalHarga - (int)totalDisc));
+        chosenFood.setStock(chosenFood.getStock() - itemAmount);
+        chosenFood.serve();
+        System.out.println("Selamat Menikmati :)");
     }
 
     // snack
